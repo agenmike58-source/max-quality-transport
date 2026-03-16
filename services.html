@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Services de Transport - Les Transports Max Quality inc." data-en="Transportation Services - Max Quality Transport inc.">Services de Transport - Les Transports Max Quality inc.</title>
+    <meta name="description" data-fr="Services complets de transport: général, réfrigéré, plateau et charges lourdes. Équipement moderne et chauffeurs expérimentés." data-en="Complete transportation services: general freight, refrigerated, flatbed and heavy haul. Modern equipment and experienced drivers.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="MQT Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-xl font-bold" style="color: #1B2A4A;" data-fr="Max Quality Transport" data-en="Max Quality Transport">Max Quality Transport</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900" data-fr="Accueil" data-en="Home">Accueil</a>
+                    <a href="services.html" class="font-medium" style="color: #1B2A4A;" data-fr="Services" data-en="Services">Services</a>
+                    <a href="flotte.html" class="text-gray-600 hover:text-gray-900" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                    <a href="a-propos.html" class="text-gray-600 hover:text-gray-900" data-fr="À Propos" data-en="About">À Propos</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-gray-900" data-fr="Contact" data-en="Contact">Contact</a>
+                    <a href="carrieres.html" class="text-gray-600 hover:text-gray-900" data-fr="Carrières" data-en="Careers">Carrières</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:block">
+                        <a href="tel:450-454-7777" class="text-sm font-medium" style="color: #1B2A4A;">450-454-7777</a>
+                    </div>
+                    <button id="lang-toggle" class="text-sm px-2 py-1 border rounded" style="color: #1B2A4A; border-color: #1B2A4A;">FR / EN</button>
+                    <a href="soumission.html" class="px-4 py-2 text-white font-medium rounded hover:opacity-90" style="background-color: #C62828;" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-600" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="services.html" class="block px-3 py-2 font-medium" style="color: #1B2A4A;" data-fr="Services" data-en="Services">Services</a>
+                <a href="flotte.html" class="block px-3 py-2 text-gray-600" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                <a href="a-propos.html" class="block px-3 py-2 text-gray-600" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="carrieres.html" class="block px-3 py-2 text-gray-600" data-fr="Carrières" data-en="Careers">Carrières</a>
+                <a href="tel:450-454-7777" class="block px-3 py-2 font-medium" style="color: #C62828;">450-454-7777</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h1 class="text-5xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Nos Services de Transport" data-en="Our Transportation Services">Nos Services de Transport</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Solutions complètes de transport adaptées à tous vos besoins. Équipement moderne et service fiable depuis 2017." data-en="Complete transportation solutions tailored to all your needs. Modern equipment and reliable service since 2017.">Solutions complètes de transport adaptées à tous vos besoins. Équipement moderne et service fiable depuis 2017.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- General Freight -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full mr-4" style="background-color: #F4F5F7;">
+                            <i data-lucide="truck" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold" style="color: #1B2A4A;" data-fr="Transport Général" data-en="General Freight">Transport Général</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-6" data-fr="Notre service de transport général couvre une vaste gamme de marchandises sèches. Nos remorques fermées protègent vos produits des intempéries et garantissent une livraison en parfait état." data-en="Our general freight service covers a wide range of dry goods. Our enclosed trailers protect your products from weather and guarantee delivery in perfect condition.">Notre service de transport général couvre une vaste gamme de marchandises sèches. Nos remorques fermées protègent vos produits des intempéries et garantissent une livraison en parfait état.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Équipements" data-en="Equipment">Équipements</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Remorques sèches 53 pieds" data-en="• 53-foot dry van trailers">• Remorques sèches 53 pieds</li>
+                                <li data-fr="• Portes arrière et latérales" data-en="• Rear and side doors">• Portes arrière et latérales</li>
+                                <li data-fr="• Sangles et barres de charge" data-en="• Straps and load bars">• Sangles et barres de charge</li>
+                                <li data-fr="• Hayon élévateur disponible" data-en="• Liftgate available">• Hayon élévateur disponible</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Idéal pour" data-en="Ideal for">Idéal pour</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Produits manufacturés" data-en="• Manufactured products">• Produits manufacturés</li>
+                                <li data-fr="• Textiles et vêtements" data-en="• Textiles and clothing">• Textiles et vêtements</li>
+                                <li data-fr="• Produits électroniques" data-en="• Electronic products">• Produits électroniques</li>
+                                <li data-fr="• Marchandises palettisées" data-en="• Palletized goods">• Marchandises palettisées</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="truck-loading.jpg" alt="Transport Général" class="rounded-lg shadow-lg w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Refrigerated Transport -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="refrigerated-truck.jpg" alt="Transport Réfrigéré" class="rounded-lg shadow-lg w-full h-96 object-cover">
+                </div>
+                <div class="reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full mr-4" style="background-color: #FFFFFF;">
+                            <i data-lucide="snowflake" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold" style="color: #1B2A4A;" data-fr="Transport Réfrigéré" data-en="Refrigerated Transport">Transport Réfrigéré</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-6" data-fr="Nos remorques réfrigérées maintiennent la chaîne du froid pour tous vos produits périssables. Contrôle précis de la température pour garantir la fraîcheur de vos marchandises." data-en="Our refrigerated trailers maintain the cold chain for all your perishable products. Precise temperature control to guarantee the freshness of your goods.">Nos remorques réfrigérées maintiennent la chaîne du froid pour tous vos produits périssables. Contrôle précis de la température pour garantir la fraîcheur de vos marchandises.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Spécifications" data-en="Specifications">Spécifications</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Température: -20°C à +20°C" data-en="• Temperature: -20°C to +20°C">• Température: -20°C à +20°C</li>
+                                <li data-fr="• Remorques 53 pieds" data-en="• 53-foot trailers">• Remorques 53 pieds</li>
+                                <li data-fr="• Surveillance continue" data-en="• Continuous monitoring">• Surveillance continue</li>
+                                <li data-fr="• Certification HACCP" data-en="• HACCP certification">• Certification HACCP</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Produits transportés" data-en="Products transported">Produits transportés</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Produits laitiers" data-en="• Dairy products">• Produits laitiers</li>
+                                <li data-fr="• Viandes et volailles" data-en="• Meat and poultry">• Viandes et volailles</li>
+                                <li data-fr="• Fruits et légumes" data-en="• Fruits and vegetables">• Fruits et légumes</li>
+                                <li data-fr="• Produits congelés" data-en="• Frozen products">• Produits congelés</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Flatbed Transport -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full mr-4" style="background-color: #F4F5F7;">
+                            <i data-lucide="package" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold" style="color: #1B2A4A;" data-fr="Transport Plateau" data-en="Flatbed Transport">Transport Plateau</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-6" data-fr="Nos remorques plateau permettent le transport de marchandises volumineuses ou de forme irrégulière. Chargement par le dessus, les côtés ou l'arrière pour une flexibilité maximale." data-en="Our flatbed trailers allow transportation of oversized or irregularly shaped goods. Loading from the top, sides, or rear for maximum flexibility.">Nos remorques plateau permettent le transport de marchandises volumineuses ou de forme irrégulière. Chargement par le dessus, les côtés ou l'arrière pour une flexibilité maximale.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Capacités" data-en="Capabilities">Capacités</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Plateaux 48 et 53 pieds" data-en="• 48 and 53-foot flatbeds">• Plateaux 48 et 53 pieds</li>
+                                <li data-fr="• Charge utile: 34 000 kg" data-en="• Payload: 34,000 kg">• Charge utile: 34 000 kg</li>
+                                <li data-fr="• Sangles et chaînes" data-en="• Straps and chains">• Sangles et chaînes</li>
+                                <li data-fr="• Bâches disponibles" data-en="• Tarps available">• Bâches disponibles</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Applications" data-en="Applications">Applications</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Matériaux de construction" data-en="• Construction materials">• Matériaux de construction</li>
+                                <li data-fr="• Machinerie industrielle" data-en="• Industrial machinery">• Machinerie industrielle</li>
+                                <li data-fr="• Produits sidérurgiques" data-en="• Steel products">• Produits sidérurgiques</li>
+                                <li data-fr="• Équipements agricoles" data-en="• Agricultural equipment">• Équipements agricoles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="flatbed-truck.jpg" alt="Transport Plateau" class="rounded-lg shadow-lg w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Heavy Haul -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="heavy-haul.jpg" alt="Charges Lourdes" class="rounded-lg shadow-lg w-full h-96 object-cover">
+                </div>
+                <div class="reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full mr-4" style="background-color: #FFFFFF;">
+                            <i data-lucide="zap" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold" style="color: #1B2A4A;" data-fr="Transport de Charges Lourdes" data-en="Heavy Haul Transport">Transport de Charges Lourdes</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-6" data-fr="Spécialisés dans le transport d'équipements exceptionnels nécessitant des permis spéciaux. Notre équipe expérimentée gère tous les aspects logistiques de vos projets complexes." data-en="Specialized in transporting exceptional equipment requiring special permits. Our experienced team handles all logistical aspects of your complex projects.">Spécialisés dans le transport d'équipements exceptionnels nécessitant des permis spéciaux. Notre équipe expérimentée gère tous les aspects logistiques de vos projets complexes.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Équipement spécialisé" data-en="Specialized Equipment">Équipement spécialisé</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Remorques surbaissées" data-en="• Lowboy trailers">• Remorques surbaissées</li>
+                                <li data-fr="• Multi-essieux" data-en="• Multi-axle trailers">• Multi-essieux</li>
+                                <li data-fr="• Remorques extensibles" data-en="• Extendable trailers">• Remorques extensibles</li>
+                                <li data-fr="• Véhicules pilotes" data-en="• Pilot vehicles">• Véhicules pilotes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-3" style="color: #1B2A4A;" data-fr="Services inclus" data-en="Services included">Services inclus</h3>
+                            <ul class="space-y-1 text-gray-600">
+                                <li data-fr="• Obtention de permis" data-en="• Permit procurement">• Obtention de permis</li>
+                                <li data-fr="• Planification de route" data-en="• Route planning">• Planification de route</li>
+                                <li data-fr="• Inspection d'infrastructure" data-en="• Infrastructure inspection">• Inspection d'infrastructure</li>
+                                <li data-fr="• Coordination multi-juridictions" data-en="• Multi-jurisdiction coordination">• Coordination multi-juridictions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20" style="background: linear-gradient(135deg, #1B2A4A 0%, #2D3A5A 100%);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-fr="Besoin d'un Service Spécialisé?" data-en="Need a Specialized Service?">Besoin d'un Service Spécialisé?</h2>
+                <p class="text-xl text-gray-200 mb-8" data-fr="Notre équipe d'experts évaluera vos besoins et vous proposera la solution de transport la plus adaptée" data-en="Our expert team will assess your needs and propose the most suitable transportation solution">Notre équipe d'experts évaluera vos besoins et vous proposera la solution de transport la plus adaptée</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="soumission.html" class="px-8 py-4 text-lg font-semibold text-white rounded-lg hover:opacity-90 transition" style="background-color: #C62828;" data-fr="Demandez une Soumission" data-en="Request a Quote">Demandez une Soumission</a>
+                    <a href="tel:450-454-7777" class="px-8 py-4 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-gray-900 transition">450-454-7777</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16" style="background-color: #1B2A4A;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="logo.png" alt="MQT Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="ml-2 text-lg font-bold text-white">Max Quality Transport</span>
+                    </div>
+                    <p class="text-gray-300 mb-4" data-fr="Transport de confiance dans la région de Montérégie depuis 2017." data-en="Trusted transportation in the Montérégie region since 2017.">Transport de confiance dans la région de Montérégie depuis 2017.</p>
+                    <p class="text-sm text-gray-400">BN: 793596719</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Services" data-en="Services">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Général" data-en="General Freight">Transport Général</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Réfrigéré" data-en="Refrigerated">Transport Réfrigéré</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Plateau" data-en="Flatbed">Transport Plateau</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Charges Lourdes" data-en="Heavy Haul">Charges Lourdes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Entreprise" data-en="Company">Entreprise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-white" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="flotte.html" class="text-gray-300 hover:text-white" data-fr="Notre Flotte" data-en="Our Fleet">Notre Flotte</a></li>
+                        <li><a href="carrieres.html" class="text-gray-300 hover:text-white" data-fr="Carrières" data-en="Careers">Carrières</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Contact" data-en="Contact">Contact</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p>1013 Rue Principale<br>Saint-Michel-de-Napierville, QC<br>J0L 2J0</p>
+                        <p><a href="tel:450-454-7777" class="hover:text-white">450-454-7777</a></p>
+                        <p><a href="mailto:info@maxqualitytransport.ca" class="hover:text-white">info@maxqualitytransport.ca</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400" data-fr="© 2026 Les Transports Max Quality inc. Tous droits réservés." data-en="© 2026 Max Quality Transport inc. All rights reserved.">© 2026 Les Transports Max Quality inc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const currentLang = localStorage.getItem('language') || 'fr';
+        
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-fr], [data-en]').forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else if (element.content !== undefined) {
+                        element.content = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            langToggle.textContent = lang === 'fr' ? 'FR / EN' : 'EN / FR';
+        }
+        
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('language', newLang);
+            applyLanguage(newLang);
+            location.reload();
+        });
+        
+        applyLanguage(currentLang);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // GSAP ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Reveal animations
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

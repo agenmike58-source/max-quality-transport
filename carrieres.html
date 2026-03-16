@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Carrières - Les Transports Max Quality inc." data-en="Careers - Max Quality Transport inc.">Carrières - Les Transports Max Quality inc.</title>
+    <meta name="description" data-fr="Joignez-vous à l'équipe de Max Quality Transport. Emplois de chauffeur de camion disponibles. Excellents salaires, avantages sociaux et environnement de travail respectueux." data-en="Join the Max Quality Transport team. Truck driver jobs available. Excellent salaries, benefits and respectful work environment.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="MQT Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-xl font-bold" style="color: #1B2A4A;" data-fr="Max Quality Transport" data-en="Max Quality Transport">Max Quality Transport</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900" data-fr="Accueil" data-en="Home">Accueil</a>
+                    <a href="services.html" class="text-gray-600 hover:text-gray-900" data-fr="Services" data-en="Services">Services</a>
+                    <a href="flotte.html" class="text-gray-600 hover:text-gray-900" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                    <a href="a-propos.html" class="text-gray-600 hover:text-gray-900" data-fr="À Propos" data-en="About">À Propos</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-gray-900" data-fr="Contact" data-en="Contact">Contact</a>
+                    <a href="carrieres.html" class="font-medium" style="color: #1B2A4A;" data-fr="Carrières" data-en="Careers">Carrières</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:block">
+                        <a href="tel:450-454-7777" class="text-sm font-medium" style="color: #1B2A4A;">450-454-7777</a>
+                    </div>
+                    <button id="lang-toggle" class="text-sm px-2 py-1 border rounded" style="color: #1B2A4A; border-color: #1B2A4A;">FR / EN</button>
+                    <a href="soumission.html" class="px-4 py-2 text-white font-medium rounded hover:opacity-90" style="background-color: #C62828;" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-600" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600" data-fr="Services" data-en="Services">Services</a>
+                <a href="flotte.html" class="block px-3 py-2 text-gray-600" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                <a href="a-propos.html" class="block px-3 py-2 text-gray-600" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="carrieres.html" class="block px-3 py-2 font-medium" style="color: #1B2A4A;" data-fr="Carrières" data-en="Careers">Carrières</a>
+                <a href="tel:450-454-7777" class="block px-3 py-2 font-medium" style="color: #C62828;">450-454-7777</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h1 class="text-5xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Joignez-vous à Notre Équipe" data-en="Join Our Team">Joignez-vous à Notre Équipe</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Nous recherchons des chauffeurs professionnels pour rejoindre notre équipe en croissance. Découvrez les opportunités de carrière disponibles chez Max Quality Transport." data-en="We are looking for professional drivers to join our growing team. Discover the career opportunities available at Max Quality Transport.">Nous recherchons des chauffeurs professionnels pour rejoindre notre équipe en croissance. Découvrez les opportunités de carrière disponibles chez Max Quality Transport.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Work With Us -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Pourquoi Travailler avec Nous?" data-en="Why Work With Us?">Pourquoi Travailler avec Nous?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Chez Max Quality Transport, nous valorisons nos employés et offrons un environnement de travail où chacun peut s'épanouir professionnellement." data-en="At Max Quality Transport, we value our employees and offer a work environment where everyone can thrive professionally.">Chez Max Quality Transport, nous valorisons nos employés et offrons un environnement de travail où chacun peut s'épanouir professionnellement.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="dollar-sign" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" style="color: #1B2A4A;" data-fr="Salaires Compétitifs" data-en="Competitive Salaries">Salaires Compétitifs</h3>
+                    <p class="text-gray-600" data-fr="Rémunération au-dessus de la moyenne du marché avec possibilités de bonus" data-en="Above-market compensation with bonus opportunities">Rémunération au-dessus de la moyenne du marché avec possibilités de bonus</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" style="color: #1B2A4A;" data-fr="Avantages Sociaux" data-en="Benefits Package">Avantages Sociaux</h3>
+                    <p class="text-gray-600" data-fr="Assurance santé, dentaire et programme de retraite collectif" data-en="Health, dental insurance and group retirement plan">Assurance santé, dentaire et programme de retraite collectif</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="truck" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" style="color: #1B2A4A;" data-fr="Équipement Moderne" data-en="Modern Equipment">Équipement Moderne</h3>
+                    <p class="text-gray-600" data-fr="Flotte récente et bien entretenue pour votre confort et sécurité" data-en="Recent and well-maintained fleet for your comfort and safety">Flotte récente et bien entretenue pour votre confort et sécurité</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" style="color: #1B2A4A;" data-fr="Environnement Respectueux" data-en="Respectful Environment">Environnement Respectueux</h3>
+                    <p class="text-gray-600" data-fr="Culture d'entreprise basée sur le respect mutuel et la communication ouverte" data-en="Company culture based on mutual respect and open communication">Culture d'entreprise basée sur le respect mutuel et la communication ouverte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Details -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-8" style="color: #1B2A4A;" data-fr="Nos Avantages en Détail" data-en="Our Benefits in Detail">Nos Avantages en Détail</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                            <div>
+                                <h3 class="font-semibold mb-2" data-fr="Rémunération attractive" data-en="Attractive compensation">Rémunération attractive</h3>
+                                <p class="text-gray-600" data-fr="Salaire de base compétitif + bonus de performance + temps supplémentaire payé" data-en="Competitive base salary + performance bonus + paid overtime">Salaire de base compétitif + bonus de performance + temps supplémentaire payé</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                            <div>
+                                <h3 class="font-semibold mb-2" data-fr="Horaires flexibles" data-en="Flexible schedules">Horaires flexibles</h3>
+                                <p class="text-gray-600" data-fr="Possibilité de retour à la maison chaque soir ou selon vos préférences" data-en="Possibility to return home every night or according to your preferences">Possibilité de retour à la maison chaque soir ou selon vos préférences</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                            <div>
+                                <h3 class="font-semibold mb-2" data-fr="Formation continue" data-en="Continuous training">Formation continue</h3>
+                                <p class="text-gray-600" data-fr="Programmes de formation payés pour améliorer vos compétences" data-en="Paid training programs to improve your skills">Programmes de formation payés pour améliorer vos compétences</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                            <div>
+                                <h3 class="font-semibold mb-2" data-fr="Assurance complète" data-en="Complete insurance">Assurance complète</h3>
+                                <p class="text-gray-600" data-fr="Couverture santé, dentaire, médicaments et assurance vie" data-en="Health, dental, drug and life insurance coverage">Couverture santé, dentaire, médicaments et assurance vie</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 mr-4 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                            <div>
+                                <h3 class="font-semibold mb-2" data-fr="Sécurité d'emploi" data-en="Job security">Sécurité d'emploi</h3>
+                                <p class="text-gray-600" data-fr="Entreprise stable en croissance avec de nombreux contrats réguliers" data-en="Stable growing company with many regular contracts">Entreprise stable en croissance avec de nombreux contrats réguliers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <img src="truck-driver.jpg" alt="Chauffeur MQT" class="rounded-lg shadow-lg w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Current Openings -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Postes Actuellement Disponibles" data-en="Currently Available Positions">Postes Actuellement Disponibles</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Nous recrutons activement des chauffeurs expérimentés pour différents types de transport." data-en="We are actively recruiting experienced drivers for different types of transportation.">Nous recrutons activement des chauffeurs expérimentés pour différents types de transport.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="truck" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-2xl font-bold" style="color: #1B2A4A;" data-fr="Chauffeur Classe 1" data-en="Class 1 Driver">Chauffeur Classe 1</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-fr="Transport longue distance et régional. Expérience requise avec les remorques sèches et réfrigérées." data-en="Long distance and regional transport. Experience required with dry and refrigerated trailers.">Transport longue distance et régional. Expérience requise avec les remorques sèches et réfrigérées.</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <h4 class="font-semibold" data-fr="Exigences:" data-en="Requirements:">Exigences:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li data-fr="• Permis classe 1 valide" data-en="• Valid class 1 license">• Permis classe 1 valide</li>
+                            <li data-fr="• Minimum 3 ans d'expérience" data-en="• Minimum 3 years experience">• Minimum 3 ans d'expérience</li>
+                            <li data-fr="• Dossier de conduite impeccable" data-en="• Clean driving record">• Dossier de conduite impeccable</li>
+                            <li data-fr="• Capacité de travail d'équipe" data-en="• Teamwork ability">• Capacité de travail d'équipe</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-sm text-gray-500" data-fr="Salaire:" data-en="Salary:">Salaire:</span>
+                            <span class="font-semibold ml-2" style="color: #1B2A4A;">$65,000 - $75,000</span>
+                        </div>
+                        <span class="px-3 py-1 text-sm font-medium text-white rounded" style="background-color: #C62828;" data-fr="Urgent" data-en="Urgent">Urgent</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="zap" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-2xl font-bold" style="color: #1B2A4A;" data-fr="Chauffeur Charges Lourdes" data-en="Heavy Haul Driver">Chauffeur Charges Lourdes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-fr="Spécialiste du transport de charges exceptionnelles avec remorques surbaissées et plateaux extensibles." data-en="Specialist in exceptional load transport with lowboy trailers and extendable flatbeds.">Spécialiste du transport de charges exceptionnelles avec remorques surbaissées et plateaux extensibles.</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <h4 class="font-semibold" data-fr="Exigences:" data-en="Requirements:">Exigences:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li data-fr="• Permis classe 1 + endorsements" data-en="• Class 1 license + endorsements">• Permis classe 1 + endorsements</li>
+                            <li data-fr="• 5+ ans charges lourdes" data-en="• 5+ years heavy haul">• 5+ ans charges lourdes</li>
+                            <li data-fr="• Expérience permis spéciaux" data-en="• Special permits experience">• Expérience permis spéciaux</li>
+                            <li data-fr="• Formation sécurité avancée" data-en="• Advanced safety training">• Formation sécurité avancée</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-sm text-gray-500" data-fr="Salaire:" data-en="Salary:">Salaire:</span>
+                            <span class="font-semibold ml-2" style="color: #1B2A4A;">$70,000 - $85,000</span>
+                        </div>
+                        <span class="px-3 py-1 text-sm font-medium border rounded" style="border-color: #1B2A4A; color: #1B2A4A;" data-fr="Temps plein" data-en="Full-time">Temps plein</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="snowflake" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-2xl font-bold" style="color: #1B2A4A;" data-fr="Chauffeur Transport Réfrigéré" data-en="Refrigerated Transport Driver">Chauffeur Transport Réfrigéré</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-fr="Transport de produits frais et congelés avec maintien strict de la chaîne du froid." data-en="Transport of fresh and frozen products with strict cold chain maintenance.">Transport de produits frais et congelés avec maintien strict de la chaîne du froid.</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <h4 class="font-semibold" data-fr="Exigences:" data-en="Requirements:">Exigences:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li data-fr="• Permis classe 1 valide" data-en="• Valid class 1 license">• Permis classe 1 valide</li>
+                            <li data-fr="• Expérience transport réfrigéré" data-en="• Refrigerated transport experience">• Expérience transport réfrigéré</li>
+                            <li data-fr="• Certification HACCP un atout" data-en="• HACCP certification an asset">• Certification HACCP un atout</li>
+                            <li data-fr="• Attention aux détails" data-en="• Attention to detail">• Attention aux détails</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-sm text-gray-500" data-fr="Salaire:" data-en="Salary:">Salaire:</span>
+                            <span class="font-semibold ml-2" style="color: #1B2A4A;">$62,000 - $72,000</span>
+                        </div>
+                        <span class="px-3 py-1 text-sm font-medium border rounded" style="border-color: #1B2A4A; color: #1B2A4A;" data-fr="Temps plein" data-en="Full-time">Temps plein</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="calendar" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-2xl font-bold" style="color: #1B2A4A;" data-fr="Chauffeur Temps Partiel" data-en="Part-time Driver">Chauffeur Temps Partiel</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-fr="Poste flexible pour chauffeurs expérimentés cherchant un horaire adapté à leurs besoins." data-en="Flexible position for experienced drivers looking for a schedule adapted to their needs.">Poste flexible pour chauffeurs expérimentés cherchant un horaire adapté à leurs besoins.</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <h4 class="font-semibold" data-fr="Avantages:" data-en="Benefits:">Avantages:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li data-fr="• Horaire flexible" data-en="• Flexible schedule">• Horaire flexible</li>
+                            <li data-fr="• Taux horaire compétitif" data-en="• Competitive hourly rate">• Taux horaire compétitif</li>
+                            <li data-fr="• Idéal pour retraités actifs" data-en="• Ideal for active retirees">• Idéal pour retraités actifs</li>
+                            <li data-fr="• Possibilité de temps plein" data-en="• Full-time possibility">• Possibilité de temps plein</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-sm text-gray-500" data-fr="Taux horaire:" data-en="Hourly rate:">Taux horaire:</span>
+                            <span class="font-semibold ml-2" style="color: #1B2A4A;">$28 - $35/h</span>
+                        </div>
+                        <span class="px-3 py-1 text-sm font-medium text-white rounded" style="background-color: #1B2A4A;" data-fr="Disponible" data-en="Available">Disponible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Application Form -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Postulez Dès Maintenant" data-en="Apply Now">Postulez Dès Maintenant</h2>
+                <p class="text-xl text-gray-600" data-fr="Remplissez ce formulaire pour soumettre votre candidature. Nous vous contacterons rapidement." data-en="Fill out this form to submit your application. We will contact you quickly.">Remplissez ce formulaire pour soumettre votre candidature. Nous vous contacterons rapidement.</p>
+            </div>
+            
+            <form id="application-form" class="bg-white rounded-lg p-8 shadow-sm">
+                <div class="grid md:grid-cols-2 gap-6 mb-6 reveal">
+                    <div>
+                        <label for="first_name" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Prénom *" data-en="First Name *">Prénom *</label>
+                        <input type="text" id="first_name" name="first_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                    </div>
+                    <div>
+                        <label for="last_name" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Nom *" data-en="Last Name *">Nom *</label>
+                        <input type="text" id="last_name" name="last_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6 reveal">
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Courriel *" data-en="Email *">Courriel *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Téléphone *" data-en="Phone *">Téléphone *</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6 reveal">
+                    <div>
+                        <label for="position" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Poste d'intérêt *" data-en="Position of interest *">Poste d'intérêt *</label>
+                        <select id="position" name="position" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                            <option value="" data-fr="Sélectionnez un poste" data-en="Select a position">Sélectionnez un poste</option>
+                            <option value="class1" data-fr="Chauffeur Classe 1" data-en="Class 1 Driver">Chauffeur Classe 1</option>
+                            <option value="heavy_haul" data-fr="Chauffeur Charges Lourdes" data-en="Heavy Haul Driver">Chauffeur Charges Lourdes</option>
+                            <option value="refrigerated" data-fr="Chauffeur Transport Réfrigéré" data-en="Refrigerated Transport Driver">Chauffeur Transport Réfrigéré</option>
+                            <option value="part_time" data-fr="Chauffeur Temps Partiel" data-en="Part-time Driver">Chauffeur Temps Partiel</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="experience" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Années d'expérience *" data-en="Years of experience *">Années d'expérience *</label>
+                        <select id="experience" name="experience" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                            <option value="" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+                            <option value="1-2" data-fr="1-2 ans" data-en="1-2 years">1-2 ans</option>
+                            <option value="3-5" data-fr="3-5 ans" data-en="3-5 years">3-5 ans</option>
+                            <option value="6-10" data-fr="6-10 ans" data-en="6-10 years">6-10 ans</option>
+                            <option value="10+" data-fr="Plus de 10 ans" data-en="More than 10 years">Plus de 10 ans</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-6 reveal">
+                    <label for="message" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Message / Expérience pertinente" data-en="Message / Relevant experience">Message / Expérience pertinente</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder="Parlez-nous de votre expérience..."></textarea>
+                </div>
+                
+                <div class="mb-6 reveal">
+                    <label class="flex items-center">
+                        <input type="checkbox" required class="mr-3">
+                        <span class="text-sm text-gray-600" data-fr="J'accepte que mes informations soient utilisées pour le processus de recrutement." data-en="I agree that my information may be used for the recruitment process.">J'accepte que mes informations soient utilisées pour le processus de recrutement.</span>
+                    </label>
+                </div>
+                
+                <div class="text-center reveal">
+                    <button type="submit" class="px-8 py-4 text-lg font-semibold text-white rounded-lg hover:opacity-90 transition" style="background-color: #C62828;" data-fr="Soumettre ma Candidature" data-en="Submit Application">Soumettre ma Candidature</button>
+                    <p class="text-sm text-gray-500 mt-4" data-fr="Vous pouvez aussi envoyer votre CV à info@maxqualitytransport.ca" data-en="You can also send your resume to info@maxqualitytransport.ca">Vous pouvez aussi envoyer votre CV à info@maxqualitytransport.ca</p>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16" style="background-color: #1B2A4A;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="logo.png" alt="MQT Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="ml-2 text-lg font-bold text-white">Max Quality Transport</span>
+                    </div>
+                    <p class="text-gray-300 mb-4" data-fr="Transport de confiance dans la région de Montérégie depuis 2017." data-en="Trusted transportation in the Montérégie region since 2017.">Transport de confiance dans la région de Montérégie depuis 2017.</p>
+                    <p class="text-sm text-gray-400">BN: 793596719</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Services" data-en="Services">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Général" data-en="General Freight">Transport Général</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Réfrigéré" data-en="Refrigerated">Transport Réfrigéré</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Plateau" data-en="Flatbed">Transport Plateau</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Charges Lourdes" data-en="Heavy Haul">Charges Lourdes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Entreprise" data-en="Company">Entreprise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-white" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="flotte.html" class="text-gray-300 hover:text-white" data-fr="Notre Flotte" data-en="Our Fleet">Notre Flotte</a></li>
+                        <li><a href="carrieres.html" class="text-gray-300 hover:text-white" data-fr="Carrières" data-en="Careers">Carrières</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Contact" data-en="Contact">Contact</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p>1013 Rue Principale<br>Saint-Michel-de-Napierville, QC<br>J0L 2J0</p>
+                        <p><a href="tel:450-454-7777" class="hover:text-white">450-454-7777</a></p>
+                        <p><a href="mailto:info@maxqualitytransport.ca" class="hover:text-white">info@maxqualitytransport.ca</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400" data-fr="© 2026 Les Transports Max Quality inc. Tous droits réservés." data-en="© 2026 Max Quality Transport inc. All rights reserved.">© 2026 Les Transports Max Quality inc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const currentLang = localStorage.getItem('language') || 'fr';
+        
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-fr], [data-en]').forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else if (element.content !== undefined) {
+                        element.content = text;
+                    } else if (element.placeholder !== undefined) {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            langToggle.textContent = lang === 'fr' ? 'FR / EN' : 'EN / FR';
+        }
+        
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('language', newLang);
+            applyLanguage(newLang);
+            location.reload();
+        });
+        
+        applyLanguage(currentLang);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Application form handling
+        document.getElementById('application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert(currentLang === 'fr' ? 
+                'Merci pour votre candidature! Nous examinerons votre dossier et vous contacterons bientôt.' :
+                'Thank you for your application! We will review your file and contact you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // GSAP ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Reveal animations
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

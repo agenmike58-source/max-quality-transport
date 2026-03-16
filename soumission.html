@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Demande de Soumission - Les Transports Max Quality inc." data-en="Quote Request - Max Quality Transport inc.">Demande de Soumission - Les Transports Max Quality inc.</title>
+    <meta name="description" data-fr="Demandez une soumission gratuite pour vos besoins de transport. Formulaire détaillé pour transport général, réfrigéré, plateau et charges lourdes." data-en="Request a free quote for your transportation needs. Detailed form for general freight, refrigerated, flatbed and heavy haul transport.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="MQT Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-xl font-bold" style="color: #1B2A4A;" data-fr="Max Quality Transport" data-en="Max Quality Transport">Max Quality Transport</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900" data-fr="Accueil" data-en="Home">Accueil</a>
+                    <a href="services.html" class="text-gray-600 hover:text-gray-900" data-fr="Services" data-en="Services">Services</a>
+                    <a href="flotte.html" class="text-gray-600 hover:text-gray-900" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                    <a href="a-propos.html" class="text-gray-600 hover:text-gray-900" data-fr="À Propos" data-en="About">À Propos</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-gray-900" data-fr="Contact" data-en="Contact">Contact</a>
+                    <a href="carrieres.html" class="text-gray-600 hover:text-gray-900" data-fr="Carrières" data-en="Careers">Carrières</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:block">
+                        <a href="tel:450-454-7777" class="text-sm font-medium" style="color: #1B2A4A;">450-454-7777</a>
+                    </div>
+                    <button id="lang-toggle" class="text-sm px-2 py-1 border rounded" style="color: #1B2A4A; border-color: #1B2A4A;">FR / EN</button>
+                    <a href="soumission.html" class="px-4 py-2 text-white font-medium rounded hover:opacity-90" style="background-color: #C62828;" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-600" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600" data-fr="Services" data-en="Services">Services</a>
+                <a href="flotte.html" class="block px-3 py-2 text-gray-600" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                <a href="a-propos.html" class="block px-3 py-2 text-gray-600" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="carrieres.html" class="block px-3 py-2 text-gray-600" data-fr="Carrières" data-en="Careers">Carrières</a>
+                <a href="tel:450-454-7777" class="block px-3 py-2 font-medium" style="color: #C62828;">450-454-7777</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h1 class="text-5xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Demande de Soumission Gratuite" data-en="Free Quote Request">Demande de Soumission Gratuite</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Remplissez ce formulaire détaillé et recevez une soumission personnalisée pour vos besoins de transport dans les 24 heures." data-en="Complete this detailed form and receive a personalized quote for your transportation needs within 24 hours.">Remplissez ce formulaire détaillé et recevez une soumission personnalisée pour vos besoins de transport dans les 24 heures.</p>
+                
+                <div class="flex justify-center mt-8">
+                    <div class="flex items-center space-x-8 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2" style="color: #1B2A4A;"></i>
+                            <span data-fr="Soumission gratuite" data-en="Free quote">Soumission gratuite</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="clock" class="w-5 h-5 mr-2" style="color: #1B2A4A;"></i>
+                            <span data-fr="Réponse sous 24h" data-en="Response within 24h">Réponse sous 24h</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="shield-check" class="w-5 h-5 mr-2" style="color: #1B2A4A;"></i>
+                            <span data-fr="Aucun engagement" data-en="No commitment">Aucun engagement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quote Form -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <form id="quote-form" class="space-y-12">
+                <!-- Company Information -->
+                <div class="reveal">
+                    <h2 class="text-2xl font-bold mb-6 pb-4 border-b" style="color: #1B2A4A;" data-fr="Informations de l'Entreprise" data-en="Company Information">Informations de l'Entreprise</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="company" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Nom de l'entreprise *" data-en="Company name *">Nom de l'entreprise *</label>
+                            <input type="text" id="company" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="industry" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Secteur d'activité" data-en="Industry">Secteur d'activité</label>
+                            <select id="industry" name="industry" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                                <option value="" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+                                <option value="agriculture" data-fr="Agriculture" data-en="Agriculture">Agriculture</option>
+                                <option value="manufacturing" data-fr="Manufacturier" data-en="Manufacturing">Manufacturier</option>
+                                <option value="food" data-fr="Alimentaire" data-en="Food & Beverage">Alimentaire</option>
+                                <option value="construction" data-fr="Construction" data-en="Construction">Construction</option>
+                                <option value="retail" data-fr="Commerce de détail" data-en="Retail">Commerce de détail</option>
+                                <option value="automotive" data-fr="Automobile" data-en="Automotive">Automobile</option>
+                                <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <label for="contact_name" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Personne contact *" data-en="Contact person *">Personne contact *</label>
+                            <input type="text" id="contact_name" name="contact_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="title" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Titre/Poste" data-en="Title/Position">Titre/Poste</label>
+                            <input type="text" id="title" name="title" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Courriel *" data-en="Email *">Courriel *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Téléphone *" data-en="Phone *">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Freight Information -->
+                <div class="reveal">
+                    <h2 class="text-2xl font-bold mb-6 pb-4 border-b" style="color: #1B2A4A;" data-fr="Type de Transport Requis" data-en="Transportation Type Required">Type de Transport Requis</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-3" style="color: #333333;" data-fr="Type de service *" data-en="Service type *">Type de service *</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center">
+                                    <input type="radio" name="service_type" value="general" required class="mr-3">
+                                    <span data-fr="Transport général (marchandises sèches)" data-en="General freight (dry goods)">Transport général (marchandises sèches)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="service_type" value="refrigerated" required class="mr-3">
+                                    <span data-fr="Transport réfrigéré" data-en="Refrigerated transport">Transport réfrigéré</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="service_type" value="flatbed" required class="mr-3">
+                                    <span data-fr="Transport plateau" data-en="Flatbed transport">Transport plateau</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="service_type" value="heavy_haul" required class="mr-3">
+                                    <span data-fr="Charges lourdes / Surdimensionné" data-en="Heavy haul / Oversized">Charges lourdes / Surdimensionné</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="frequency" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Fréquence *" data-en="Frequency *">Fréquence *</label>
+                            <select id="frequency" name="frequency" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                                <option value="" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+                                <option value="one_time" data-fr="Expédition unique" data-en="One-time shipment">Expédition unique</option>
+                                <option value="weekly" data-fr="Hebdomadaire" data-en="Weekly">Hebdomadaire</option>
+                                <option value="monthly" data-fr="Mensuel" data-en="Monthly">Mensuel</option>
+                                <option value="regular" data-fr="Régulier (contrat)" data-en="Regular (contract)">Régulier (contrat)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Route Information -->
+                <div class="reveal">
+                    <h2 class="text-2xl font-bold mb-6 pb-4 border-b" style="color: #1B2A4A;" data-fr="Informations de Route" data-en="Route Information">Informations de Route</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="origin" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Point d'origine *" data-en="Origin point *">Point d'origine *</label>
+                            <input type="text" id="origin" name="origin" required placeholder="Ville, Province" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                            <p class="text-xs text-gray-500 mt-1" data-fr="Ex: Montréal, QC" data-en="Ex: Montreal, QC">Ex: Montréal, QC</p>
+                        </div>
+                        <div>
+                            <label for="destination" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Destination *" data-en="Destination *">Destination *</label>
+                            <input type="text" id="destination" name="destination" required placeholder="Ville, Province" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                            <p class="text-xs text-gray-500 mt-1" data-fr="Ex: Toronto, ON" data-en="Ex: Toronto, ON">Ex: Toronto, ON</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <label for="pickup_date" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Date de cueillette souhaitée *" data-en="Desired pickup date *">Date de cueillette souhaitée *</label>
+                            <input type="date" id="pickup_date" name="pickup_date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="delivery_date" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Date de livraison souhaitée" data-en="Desired delivery date">Date de livraison souhaitée</label>
+                            <input type="date" id="delivery_date" name="delivery_date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cargo Details -->
+                <div class="reveal">
+                    <h2 class="text-2xl font-bold mb-6 pb-4 border-b" style="color: #1B2A4A;" data-fr="Détails de la Marchandise" data-en="Cargo Details">Détails de la Marchandise</h2>
+                    
+                    <div>
+                        <label for="cargo_description" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Description de la marchandise *" data-en="Cargo description *">Description de la marchandise *</label>
+                        <textarea id="cargo_description" name="cargo_description" rows="3" required placeholder="Décrivez le type de marchandise à transporter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none" style="focus:ring-color: #1B2A4A;"></textarea>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <label for="weight" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Poids approximatif *" data-en="Approximate weight *">Poids approximatif *</label>
+                            <div class="flex">
+                                <input type="number" id="weight" name="weight" required min="0" class="w-full px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                                <select name="weight_unit" class="px-4 py-3 border border-l-0 border-gray-300 rounded-r-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                                    <option value="kg">kg</option>
+                                    <option value="lbs">lbs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="pieces" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Nombre de pièces" data-en="Number of pieces">Nombre de pièces</label>
+                            <input type="number" id="pieces" name="pieces" min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="pallets" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Nombre de palettes" data-en="Number of pallets">Nombre de palettes</label>
+                            <input type="number" id="pallets" name="pallets" min="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <label for="length" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Longueur (pieds)" data-en="Length (feet)">Longueur (pieds)</label>
+                            <input type="number" id="length" name="length" min="0" step="0.1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="width" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Largeur (pieds)" data-en="Width (feet)">Largeur (pieds)</label>
+                            <input type="number" id="width" name="width" min="0" step="0.1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                        <div>
+                            <label for="height" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Hauteur (pieds)" data-en="Height (feet)">Hauteur (pieds)</label>
+                            <input type="number" id="height" name="height" min="0" step="0.1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                        </div>
+                    </div>
+                    
+                    <!-- Special Requirements for Refrigerated -->
+                    <div id="refrigerated-section" class="hidden mt-6 p-6 bg-blue-50 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4" style="color: #1B2A4A;" data-fr="Exigences de Température" data-en="Temperature Requirements">Exigences de Température</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="temperature" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Température requise" data-en="Required temperature">Température requise</label>
+                                <div class="flex">
+                                    <input type="number" id="temperature" name="temperature" class="w-full px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                                    <select name="temperature_unit" class="px-4 py-3 border border-l-0 border-gray-300 rounded-r-lg">
+                                        <option value="celsius">°C</option>
+                                        <option value="fahrenheit">°F</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="flex items-center mt-8">
+                                    <input type="checkbox" name="frozen" class="mr-3">
+                                    <span data-fr="Produits congelés" data-en="Frozen products">Produits congelés</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Special Requirements -->
+                <div class="reveal">
+                    <h2 class="text-2xl font-bold mb-6 pb-4 border-b" style="color: #1B2A4A;" data-fr="Exigences Spéciales" data-en="Special Requirements">Exigences Spéciales</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-3" style="color: #333333;" data-fr="Services additionnels" data-en="Additional services">Services additionnels</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="liftgate" class="mr-3">
+                                    <span data-fr="Hayon élévateur requis" data-en="Liftgate required">Hayon élévateur requis</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="inside_pickup" class="mr-3">
+                                    <span data-fr="Cueillette à l'intérieur" data-en="Inside pickup">Cueillette à l'intérieur</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="inside_delivery" class="mr-3">
+                                    <span data-fr="Livraison à l'intérieur" data-en="Inside delivery">Livraison à l'intérieur</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="residential" class="mr-3">
+                                    <span data-fr="Adresse résidentielle" data-en="Residential address">Adresse résidentielle</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="appointment" class="mr-3">
+                                    <span data-fr="Rendez-vous requis" data-en="Appointment required">Rendez-vous requis</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="special_instructions" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Instructions spéciales" data-en="Special instructions">Instructions spéciales</label>
+                            <textarea id="special_instructions" name="special_instructions" rows="6" placeholder="Toute information additionnelle importante pour le transport" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none" style="focus:ring-color: #1B2A4A;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center reveal">
+                    <button type="submit" class="px-12 py-4 text-lg font-semibold text-white rounded-lg hover:opacity-90 transition" style="background-color: #C62828;" data-fr="Envoyer ma Demande de Soumission" data-en="Submit Quote Request">Envoyer ma Demande de Soumission</button>
+                    <p class="text-sm text-gray-500 mt-4" data-fr="Vous recevrez une réponse détaillée dans les 24 heures" data-en="You will receive a detailed response within 24 hours">Vous recevrez une réponse détaillée dans les 24 heures</p>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16" style="background-color: #1B2A4A;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="logo.png" alt="MQT Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="ml-2 text-lg font-bold text-white">Max Quality Transport</span>
+                    </div>
+                    <p class="text-gray-300 mb-4" data-fr="Transport de confiance dans la région de Montérégie depuis 2017." data-en="Trusted transportation in the Montérégie region since 2017.">Transport de confiance dans la région de Montérégie depuis 2017.</p>
+                    <p class="text-sm text-gray-400">BN: 793596719</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Services" data-en="Services">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Général" data-en="General Freight">Transport Général</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Réfrigéré" data-en="Refrigerated">Transport Réfrigéré</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Plateau" data-en="Flatbed">Transport Plateau</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Charges Lourdes" data-en="Heavy Haul">Charges Lourdes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Entreprise" data-en="Company">Entreprise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-white" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="flotte.html" class="text-gray-300 hover:text-white" data-fr="Notre Flotte" data-en="Our Fleet">Notre Flotte</a></li>
+                        <li><a href="carrieres.html" class="text-gray-300 hover:text-white" data-fr="Carrières" data-en="Careers">Carrières</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Contact" data-en="Contact">Contact</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p>1013 Rue Principale<br>Saint-Michel-de-Napierville, QC<br>J0L 2J0</p>
+                        <p><a href="tel:450-454-7777" class="hover:text-white">450-454-7777</a></p>
+                        <p><a href="mailto:info@maxqualitytransport.ca" class="hover:text-white">info@maxqualitytransport.ca</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400" data-fr="© 2026 Les Transports Max Quality inc. Tous droits réservés." data-en="© 2026 Max Quality Transport inc. All rights reserved.">© 2026 Les Transports Max Quality inc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const currentLang = localStorage.getItem('language') || 'fr';
+        
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-fr], [data-en]').forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else if (element.content !== undefined) {
+                        element.content = text;
+                    } else if (element.placeholder !== undefined) {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            langToggle.textContent = lang === 'fr' ? 'FR / EN' : 'EN / FR';
+        }
+        
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('language', newLang);
+            applyLanguage(newLang);
+            location.reload();
+        });
+        
+        applyLanguage(currentLang);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Service type change handler
+        document.querySelectorAll('input[name="service_type"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const refrigeratedSection = document.getElementById('refrigerated-section');
+                if (this.value === 'refrigerated') {
+                    refrigeratedSection.classList.remove('hidden');
+                } else {
+                    refrigeratedSection.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Quote form handling
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert(currentLang === 'fr' ? 
+                'Merci pour votre demande de soumission! Nous vous contacterons dans les 24 heures avec une proposition détaillée.' :
+                'Thank you for your quote request! We will contact you within 24 hours with a detailed proposal.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('pickup_date').setAttribute('min', today);
+        document.getElementById('delivery_date').setAttribute('min', today);
+        
+        // GSAP ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Reveal animations
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Contact - Les Transports Max Quality inc." data-en="Contact - Max Quality Transport inc.">Contact - Les Transports Max Quality inc.</title>
+    <meta name="description" data-fr="Contactez Les Transports Max Quality inc. Téléphone: 450-454-7777. Adresse: 1013 Rue Principale, Saint-Michel-de-Napierville, QC. Heures d'ouverture et formulaire de contact." data-en="Contact Max Quality Transport inc. Phone: 450-454-7777. Address: 1013 Rue Principale, Saint-Michel-de-Napierville, QC. Business hours and contact form.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="MQT Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-xl font-bold" style="color: #1B2A4A;" data-fr="Max Quality Transport" data-en="Max Quality Transport">Max Quality Transport</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900" data-fr="Accueil" data-en="Home">Accueil</a>
+                    <a href="services.html" class="text-gray-600 hover:text-gray-900" data-fr="Services" data-en="Services">Services</a>
+                    <a href="flotte.html" class="text-gray-600 hover:text-gray-900" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                    <a href="a-propos.html" class="text-gray-600 hover:text-gray-900" data-fr="À Propos" data-en="About">À Propos</a>
+                    <a href="contact.html" class="font-medium" style="color: #1B2A4A;" data-fr="Contact" data-en="Contact">Contact</a>
+                    <a href="carrieres.html" class="text-gray-600 hover:text-gray-900" data-fr="Carrières" data-en="Careers">Carrières</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:block">
+                        <a href="tel:450-454-7777" class="text-sm font-medium" style="color: #1B2A4A;">450-454-7777</a>
+                    </div>
+                    <button id="lang-toggle" class="text-sm px-2 py-1 border rounded" style="color: #1B2A4A; border-color: #1B2A4A;">FR / EN</button>
+                    <a href="soumission.html" class="px-4 py-2 text-white font-medium rounded hover:opacity-90" style="background-color: #C62828;" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-600" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600" data-fr="Services" data-en="Services">Services</a>
+                <a href="flotte.html" class="block px-3 py-2 text-gray-600" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                <a href="a-propos.html" class="block px-3 py-2 text-gray-600" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="contact.html" class="block px-3 py-2 font-medium" style="color: #1B2A4A;" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="carrieres.html" class="block px-3 py-2 text-gray-600" data-fr="Carrières" data-en="Careers">Carrières</a>
+                <a href="tel:450-454-7777" class="block px-3 py-2 font-medium" style="color: #C62828;">450-454-7777</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h1 class="text-5xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Contactez-Nous" data-en="Contact Us">Contactez-Nous</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Notre équipe est disponible pour répondre à toutes vos questions et vous fournir un service de transport personnalisé." data-en="Our team is available to answer all your questions and provide you with personalized transportation service.">Notre équipe est disponible pour répondre à toutes vos questions et vous fournir un service de transport personnalisé.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Information -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-gray-50 rounded-lg reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="phone" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #1B2A4A;" data-fr="Téléphone" data-en="Phone">Téléphone</h3>
+                    <p class="text-gray-600 mb-4" data-fr="Appelez-nous pour une réponse immédiate" data-en="Call us for immediate response">Appelez-nous pour une réponse immédiate</p>
+                    <a href="tel:450-454-7777" class="text-2xl font-bold hover:opacity-75" style="color: #C62828;">450-454-7777</a>
+                    <p class="text-sm text-gray-500 mt-2" data-fr="24h/7 pour urgences" data-en="24/7 for emergencies">24h/7 pour urgences</p>
+                </div>
+                
+                <div class="text-center p-8 bg-gray-50 rounded-lg reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #1B2A4A;" data-fr="Courriel" data-en="Email">Courriel</h3>
+                    <p class="text-gray-600 mb-4" data-fr="Écrivez-nous pour vos questions" data-en="Write to us for your questions">Écrivez-nous pour vos questions</p>
+                    <a href="mailto:info@maxqualitytransport.ca" class="text-lg font-semibold hover:opacity-75" style="color: #C62828;">info@maxqualitytransport.ca</a>
+                    <p class="text-sm text-gray-500 mt-2" data-fr="Réponse sous 24h" data-en="Response within 24h">Réponse sous 24h</p>
+                </div>
+                
+                <div class="text-center p-8 bg-gray-50 rounded-lg reveal">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full" style="background-color: #1B2A4A;">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: #1B2A4A;" data-fr="Adresse" data-en="Address">Adresse</h3>
+                    <p class="text-gray-600 mb-4" data-fr="Visitez nos installations" data-en="Visit our facilities">Visitez nos installations</p>
+                    <div class="text-lg">
+                        <p class="font-semibold" style="color: #333333;">1013 Rue Principale</p>
+                        <p style="color: #666666;">Saint-Michel-de-Napierville, QC</p>
+                        <p style="color: #666666;">J0L 2J0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form and Map -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-8" style="color: #1B2A4A;" data-fr="Envoyez-nous un Message" data-en="Send us a Message">Envoyez-nous un Message</h2>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="prenom" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Prénom" data-en="First Name">Prénom</label>
+                                <input type="text" id="prenom" name="prenom" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder="">
+                            </div>
+                            <div>
+                                <label for="nom" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Nom" data-en="Last Name">Nom</label>
+                                <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder="">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Courriel" data-en="Email">Courriel</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder="">
+                            </div>
+                            <div>
+                                <label for="telephone" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder="">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="entreprise" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Entreprise" data-en="Company">Entreprise</label>
+                            <input type="text" id="entreprise" name="entreprise" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder="">
+                        </div>
+                        
+                        <div>
+                            <label for="sujet" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Sujet" data-en="Subject">Sujet</label>
+                            <select id="sujet" name="sujet" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent" style="focus:ring-color: #1B2A4A;">
+                                <option value="" data-fr="Sélectionnez un sujet" data-en="Select a subject">Sélectionnez un sujet</option>
+                                <option value="quote" data-fr="Demande de soumission" data-en="Quote request">Demande de soumission</option>
+                                <option value="general" data-fr="Question générale" data-en="General question">Question générale</option>
+                                <option value="service" data-fr="Information sur nos services" data-en="Service information">Information sur nos services</option>
+                                <option value="fleet" data-fr="Visite de la flotte" data-en="Fleet visit">Visite de la flotte</option>
+                                <option value="careers" data-fr="Opportunités de carrière" data-en="Career opportunities">Opportunités de carrière</option>
+                                <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2" style="color: #333333;" data-fr="Message" data-en="Message">Message</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none" style="focus:ring-color: #1B2A4A;" data-fr="" data-en="" placeholder=""></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 text-white font-semibold rounded-lg hover:opacity-90 transition" style="background-color: #C62828;" data-fr="Envoyer le Message" data-en="Send Message">Envoyer le Message</button>
+                    </form>
+                </div>
+                
+                <!-- Map and Business Hours -->
+                <div class="space-y-8">
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Notre Emplacement" data-en="Our Location">Notre Emplacement</h3>
+                        <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
+                            <!-- Placeholder for interactive map -->
+                            <div class="text-center">
+                                <i data-lucide="map-pin" class="w-12 h-12 mx-auto mb-4" style="color: #1B2A4A;"></i>
+                                <p class="text-lg font-semibold" style="color: #1B2A4A;">1013 Rue Principale</p>
+                                <p class="text-gray-600">Saint-Michel-de-Napierville, QC J0L 2J0</p>
+                                <a href="https://maps.google.com/?q=1013+Rue+Principale,+Saint-Michel-de-Napierville,+QC+J0L+2J0" target="_blank" class="inline-block mt-4 px-4 py-2 text-white rounded hover:opacity-90" style="background-color: #1B2A4A;" data-fr="Voir sur Google Maps" data-en="View on Google Maps">Voir sur Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Heures d'Ouverture" data-en="Business Hours">Heures d'Ouverture</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="font-medium" data-fr="Lundi - Vendredi" data-en="Monday - Friday">Lundi - Vendredi</span>
+                                    <span style="color: #666666;">7h00 - 18h00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-medium" data-fr="Samedi" data-en="Saturday">Samedi</span>
+                                    <span style="color: #666666;">8h00 - 16h00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="font-medium" data-fr="Dimanche" data-en="Sunday">Dimanche</span>
+                                    <span style="color: #666666;" data-fr="Fermé" data-en="Closed">Fermé</span>
+                                </div>
+                                <hr class="my-4">
+                                <div class="text-sm text-gray-600">
+                                    <p data-fr="Service d'urgence disponible 24h/7" data-en="Emergency service available 24/7">Service d'urgence disponible 24h/7</p>
+                                    <p data-fr="Appelez le 450-454-7777" data-en="Call 450-454-7777">Appelez le 450-454-7777</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Information Supplémentaire" data-en="Additional Information">Information Supplémentaire</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-sm space-y-4">
+                            <div class="flex items-start">
+                                <i data-lucide="shield-check" class="w-6 h-6 mr-3 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1" data-fr="Assurance Complète" data-en="Full Insurance">Assurance Complète</h4>
+                                    <p class="text-sm text-gray-600" data-fr="5M$ de responsabilité civile" data-en="$5M liability coverage">5M$ de responsabilité civile</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i data-lucide="clock" class="w-6 h-6 mr-3 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1" data-fr="Livraisons Rapides" data-en="Fast Deliveries">Livraisons Rapides</h4>
+                                    <p class="text-sm text-gray-600" data-fr="Service express disponible" data-en="Express service available">Service express disponible</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i data-lucide="users" class="w-6 h-6 mr-3 mt-1 flex-shrink-0" style="color: #1B2A4A;"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1" data-fr="Support Client" data-en="Customer Support">Support Client</h4>
+                                    <p class="text-sm text-gray-600" data-fr="Équipe bilingue FR/EN" data-en="Bilingual FR/EN team">Équipe bilingue FR/EN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16" style="background-color: #1B2A4A;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="logo.png" alt="MQT Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="ml-2 text-lg font-bold text-white">Max Quality Transport</span>
+                    </div>
+                    <p class="text-gray-300 mb-4" data-fr="Transport de confiance dans la région de Montérégie depuis 2017." data-en="Trusted transportation in the Montérégie region since 2017.">Transport de confiance dans la région de Montérégie depuis 2017.</p>
+                    <p class="text-sm text-gray-400">BN: 793596719</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Services" data-en="Services">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Général" data-en="General Freight">Transport Général</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Réfrigéré" data-en="Refrigerated">Transport Réfrigéré</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Plateau" data-en="Flatbed">Transport Plateau</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Charges Lourdes" data-en="Heavy Haul">Charges Lourdes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Entreprise" data-en="Company">Entreprise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-white" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="flotte.html" class="text-gray-300 hover:text-white" data-fr="Notre Flotte" data-en="Our Fleet">Notre Flotte</a></li>
+                        <li><a href="carrieres.html" class="text-gray-300 hover:text-white" data-fr="Carrières" data-en="Careers">Carrières</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Contact" data-en="Contact">Contact</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p>1013 Rue Principale<br>Saint-Michel-de-Napierville, QC<br>J0L 2J0</p>
+                        <p><a href="tel:450-454-7777" class="hover:text-white">450-454-7777</a></p>
+                        <p><a href="mailto:info@maxqualitytransport.ca" class="hover:text-white">info@maxqualitytransport.ca</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400" data-fr="© 2026 Les Transports Max Quality inc. Tous droits réservés." data-en="© 2026 Max Quality Transport inc. All rights reserved.">© 2026 Les Transports Max Quality inc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const currentLang = localStorage.getItem('language') || 'fr';
+        
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-fr], [data-en]').forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else if (element.content !== undefined) {
+                        element.content = text;
+                    } else if (element.placeholder !== undefined) {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            langToggle.textContent = lang === 'fr' ? 'FR / EN' : 'EN / FR';
+        }
+        
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('language', newLang);
+            applyLanguage(newLang);
+            location.reload();
+        });
+        
+        applyLanguage(currentLang);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert(currentLang === 'fr' ? 
+                'Merci pour votre message! Nous vous contacterons bientôt.' :
+                'Thank you for your message! We will contact you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // GSAP ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Reveal animations
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

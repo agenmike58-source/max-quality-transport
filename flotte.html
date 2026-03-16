@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Notre Flotte - Les Transports Max Quality inc." data-en="Our Fleet - Max Quality Transport inc.">Notre Flotte - Les Transports Max Quality inc.</title>
+    <meta name="description" data-fr="Découvrez notre flotte moderne de 9 véhicules: tracteurs routiers, remorques sèches, réfrigérées et plateaux. Équipement récent et bien entretenu." data-en="Discover our modern fleet of 9 vehicles: highway tractors, dry vans, refrigerated and flatbed trailers. Recent and well-maintained equipment.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="MQT Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-xl font-bold" style="color: #1B2A4A;" data-fr="Max Quality Transport" data-en="Max Quality Transport">Max Quality Transport</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900" data-fr="Accueil" data-en="Home">Accueil</a>
+                    <a href="services.html" class="text-gray-600 hover:text-gray-900" data-fr="Services" data-en="Services">Services</a>
+                    <a href="flotte.html" class="font-medium" style="color: #1B2A4A;" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                    <a href="a-propos.html" class="text-gray-600 hover:text-gray-900" data-fr="À Propos" data-en="About">À Propos</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-gray-900" data-fr="Contact" data-en="Contact">Contact</a>
+                    <a href="carrieres.html" class="text-gray-600 hover:text-gray-900" data-fr="Carrières" data-en="Careers">Carrières</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:block">
+                        <a href="tel:450-454-7777" class="text-sm font-medium" style="color: #1B2A4A;">450-454-7777</a>
+                    </div>
+                    <button id="lang-toggle" class="text-sm px-2 py-1 border rounded" style="color: #1B2A4A; border-color: #1B2A4A;">FR / EN</button>
+                    <a href="soumission.html" class="px-4 py-2 text-white font-medium rounded hover:opacity-90" style="background-color: #C62828;" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-600" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600" data-fr="Services" data-en="Services">Services</a>
+                <a href="flotte.html" class="block px-3 py-2 font-medium" style="color: #1B2A4A;" data-fr="Flotte" data-en="Fleet">Flotte</a>
+                <a href="a-propos.html" class="block px-3 py-2 text-gray-600" data-fr="À Propos" data-en="About">À Propos</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600" data-fr="Contact" data-en="Contact">Contact</a>
+                <a href="carrieres.html" class="block px-3 py-2 text-gray-600" data-fr="Carrières" data-en="Careers">Carrières</a>
+                <a href="tel:450-454-7777" class="block px-3 py-2 font-medium" style="color: #C62828;">450-454-7777</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <h1 class="text-5xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Notre Flotte Moderne" data-en="Our Modern Fleet">Notre Flotte Moderne</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="9 véhicules récents et bien entretenus pour répondre à tous vos besoins de transport. Équipement de pointe et maintenance rigoureuse." data-en="9 recent and well-maintained vehicles to meet all your transportation needs. Cutting-edge equipment and rigorous maintenance.">9 véhicules récents et bien entretenus pour répondre à tous vos besoins de transport. Équipement de pointe et maintenance rigoureuse.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fleet Overview -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Aperçu de Notre Flotte" data-en="Fleet Overview">Aperçu de Notre Flotte</h2>
+                    <p class="text-lg text-gray-600 mb-6" data-fr="Chez Max Quality Transport, nous investissons continuellement dans l'acquisition et la maintenance de notre équipement pour offrir un service fiable et sécuritaire." data-en="At Max Quality Transport, we continuously invest in acquiring and maintaining our equipment to provide reliable and safe service.">Chez Max Quality Transport, nous investissons continuellement dans l'acquisition et la maintenance de notre équipement pour offrir un service fiable et sécuritaire.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold" style="color: #1B2A4A;">25</div>
+                            <div class="text-sm text-gray-600" data-fr="Tracteurs Routiers" data-en="Highway Tractors">Tracteurs Routiers</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold" style="color: #1B2A4A;">30</div>
+                            <div class="text-sm text-gray-600" data-fr="Remorques Sèches" data-en="Dry Van Trailers">Remorques Sèches</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold" style="color: #1B2A4A;">15</div>
+                            <div class="text-sm text-gray-600" data-fr="Remorques Réfrigérées" data-en="Refrigerated Trailers">Remorques Réfrigérées</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold" style="color: #1B2A4A;">12</div>
+                            <div class="text-sm text-gray-600" data-fr="Plateaux & Surbaissées" data-en="Flatbeds & Lowboys">Plateaux & Surbaissées</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="truck-hero.png" alt="Flotte MQT" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Truck Types -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Nos Tracteurs Routiers" data-en="Our Highway Tractors">Nos Tracteurs Routiers</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Flotte moderne de tracteurs performants et économiques pour tous types de transport" data-en="Modern fleet of powerful and economical tractors for all types of transportation">Flotte moderne de tracteurs performants et économiques pour tous types de transport</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="truck" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-xl font-semibold" style="color: #1B2A4A;" data-fr="Freightliner Cascadia" data-en="Freightliner Cascadia">Freightliner Cascadia</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li data-fr="• Moteur Detroit DD15 (455 HP)" data-en="• Detroit DD15 Engine (455 HP)">• Moteur Detroit DD15 (455 HP)</li>
+                        <li data-fr="• Transmission automatisée" data-en="• Automated transmission">• Transmission automatisée</li>
+                        <li data-fr="• Système de navigation GPS" data-en="• GPS navigation system">• Système de navigation GPS</li>
+                        <li data-fr="• Climatiseur et chauffage" data-en="• Air conditioning and heating">• Climatiseur et chauffage</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="truck" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-xl font-semibold" style="color: #1B2A4A;" data-fr="Volvo VNL" data-en="Volvo VNL">Volvo VNL</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li data-fr="• Moteur Volvo D13 (425 HP)" data-en="• Volvo D13 Engine (425 HP)">• Moteur Volvo D13 (425 HP)</li>
+                        <li data-fr="• Transmission I-Shift" data-en="• I-Shift transmission">• Transmission I-Shift</li>
+                        <li data-fr="• Système de sécurité avancé" data-en="• Advanced safety system">• Système de sécurité avancé</li>
+                        <li data-fr="• Cabine couchette ergonomique" data-en="• Ergonomic sleeper cab">• Cabine couchette ergonomique</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition reveal">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="truck" class="w-8 h-8 mr-3" style="color: #1B2A4A;"></i>
+                        <h3 class="text-xl font-semibold" style="color: #1B2A4A;" data-fr="Peterbilt 579" data-en="Peterbilt 579">Peterbilt 579</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li data-fr="• Moteur Paccar MX-13 (440 HP)" data-en="• Paccar MX-13 Engine (440 HP)">• Moteur Paccar MX-13 (440 HP)</li>
+                        <li data-fr="• Transmission Allison automatique" data-en="• Allison automatic transmission">• Transmission Allison automatique</li>
+                        <li data-fr="• Suspension pneumatique" data-en="• Air suspension">• Suspension pneumatique</li>
+                        <li data-fr="• Éclairage LED complet" data-en="• Complete LED lighting">• Éclairage LED complet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trailer Types -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Types de Remorques" data-en="Trailer Types">Types de Remorques</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Équipement spécialisé pour chaque type de marchandise" data-en="Specialized equipment for every type of cargo">Équipement spécialisé pour chaque type de marchandise</p>
+            </div>
+            
+            <div class="grid gap-12">
+                <!-- Dry Van -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold mb-4" style="color: #1B2A4A;" data-fr="Remorques Sèches" data-en="Dry Van Trailers">Remorques Sèches</h3>
+                        <p class="text-lg text-gray-600 mb-6" data-fr="Nos remorques sèches de 53 pieds offrent un volume de chargement optimal et une protection complète contre les intempéries." data-en="Our 53-foot dry van trailers offer optimal loading volume and complete protection from weather.">Nos remorques sèches de 53 pieds offrent un volume de chargement optimal et une protection complète contre les intempéries.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold mb-2" style="color: #1B2A4A;" data-fr="Spécifications" data-en="Specifications">Spécifications</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li data-fr="• Longueur: 53 pieds" data-en="• Length: 53 feet">• Longueur: 53 pieds</li>
+                                    <li data-fr="• Largeur: 8.5 pieds" data-en="• Width: 8.5 feet">• Largeur: 8.5 pieds</li>
+                                    <li data-fr="• Hauteur: 9.5 pieds" data-en="• Height: 9.5 feet">• Hauteur: 9.5 pieds</li>
+                                    <li data-fr="• Charge utile: 34 000 kg" data-en="• Payload: 34,000 kg">• Charge utile: 34 000 kg</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2" style="color: #1B2A4A;" data-fr="Équipements" data-en="Equipment">Équipements</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li data-fr="• Portes arrière et latérales" data-en="• Rear and side doors">• Portes arrière et latérales</li>
+                                    <li data-fr="• Plancher en aluminium" data-en="• Aluminum flooring">• Plancher en aluminium</li>
+                                    <li data-fr="• Barres de charge" data-en="• Load bars">• Barres de charge</li>
+                                    <li data-fr="• Sangles et chaînes" data-en="• Straps and chains">• Sangles et chaînes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <img src="truck-loading.jpg" alt="Remorque Sèche" class="rounded-lg shadow-lg w-full h-80 object-cover">
+                    </div>
+                </div>
+                
+                <!-- Refrigerated -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center" style="background-color: #F4F5F7; margin: 0 -4rem; padding: 3rem 4rem;">
+                    <div class="reveal order-2 lg:order-1">
+                        <img src="refrigerated-truck.jpg" alt="Remorque Réfrigérée" class="rounded-lg shadow-lg w-full h-80 object-cover">
+                    </div>
+                    <div class="reveal order-1 lg:order-2">
+                        <h3 class="text-3xl font-bold mb-4" style="color: #1B2A4A;" data-fr="Remorques Réfrigérées" data-en="Refrigerated Trailers">Remorques Réfrigérées</h3>
+                        <p class="text-lg text-gray-600 mb-6" data-fr="Système de réfrigération de pointe pour maintenir la chaîne du froid. Contrôle précis de température et surveillance continue." data-en="State-of-the-art refrigeration system to maintain cold chain. Precise temperature control and continuous monitoring.">Système de réfrigération de pointe pour maintenir la chaîne du froid. Contrôle précis de température et surveillance continue.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold mb-2" style="color: #1B2A4A;" data-fr="Capacités" data-en="Capabilities">Capacités</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li data-fr="• Température: -20°C à +20°C" data-en="• Temperature: -20°C to +20°C">• Température: -20°C à +20°C</li>
+                                    <li data-fr="• Multi-zones disponibles" data-en="• Multi-zone available">• Multi-zones disponibles</li>
+                                    <li data-fr="• Surveillance GPS" data-en="• GPS monitoring">• Surveillance GPS</li>
+                                    <li data-fr="• Alarmes automatiques" data-en="• Automatic alarms">• Alarmes automatiques</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2" style="color: #1B2A4A;" data-fr="Certifications" data-en="Certifications">Certifications</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li data-fr="• HACCP certifié" data-en="• HACCP certified">• HACCP certifié</li>
+                                    <li data-fr="• Norme ATP" data-en="• ATP standard">• Norme ATP</li>
+                                    <li data-fr="• Inspection régulière" data-en="• Regular inspection">• Inspection régulière</li>
+                                    <li data-fr="• Documentation complète" data-en="• Complete documentation">• Documentation complète</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flatbed -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold mb-4" style="color: #1B2A4A;" data-fr="Plateaux et Surbaissées" data-en="Flatbeds and Lowboys">Plateaux et Surbaissées</h3>
+                        <p class="text-lg text-gray-600 mb-6" data-fr="Équipement spécialisé pour le transport de marchandises volumineuses et de charges exceptionnelles. Flexibilité de chargement maximale." data-en="Specialized equipment for transporting oversized goods and exceptional loads. Maximum loading flexibility.">Équipement spécialisé pour le transport de marchandises volumineuses et de charges exceptionnelles. Flexibilité de chargement maximale.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold mb-2" style="color: #1B2A4A;" data-fr="Types disponibles" data-en="Available types">Types disponibles</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li data-fr="• Plateaux standards 48/53 pieds" data-en="• Standard 48/53 foot flatbeds">• Plateaux standards 48/53 pieds</li>
+                                    <li data-fr="• Surbaissées pour charges lourdes" data-en="• Lowboys for heavy loads">• Surbaissées pour charges lourdes</li>
+                                    <li data-fr="• Plateaux extensibles" data-en="• Extendable flatbeds">• Plateaux extensibles</li>
+                                    <li data-fr="• Multi-essieux disponibles" data-en="• Multi-axle available">• Multi-essieux disponibles</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2" style="color: #1B2A4A;" data-fr="Accessoires" data-en="Accessories">Accessoires</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li data-fr="• Sangles et chaînes certifiées" data-en="• Certified straps and chains">• Sangles et chaînes certifiées</li>
+                                    <li data-fr="• Bâches de protection" data-en="• Protective tarps">• Bâches de protection</li>
+                                    <li data-fr="• Coins de bois et blocs" data-en="• Wood blocks and wedges">• Coins de bois et blocs</li>
+                                    <li data-fr="• Équipement de levage" data-en="• Lifting equipment">• Équipement de levage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <img src="flatbed-truck.jpg" alt="Plateau" class="rounded-lg shadow-lg w-full h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Maintenance -->
+    <section class="py-20" style="background-color: #F4F5F7;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-6" style="color: #1B2A4A;" data-fr="Maintenance et Sécurité" data-en="Maintenance and Safety">Maintenance et Sécurité</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-fr="Programme rigoureux de maintenance préventive pour assurer la fiabilité et la sécurité de notre flotte" data-en="Rigorous preventive maintenance program to ensure reliability and safety of our fleet">Programme rigoureux de maintenance préventive pour assurer la fiabilité et la sécurité de notre flotte</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #F4F5F7;">
+                        <i data-lucide="settings" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: #1B2A4A;" data-fr="Maintenance Préventive" data-en="Preventive Maintenance">Maintenance Préventive</h3>
+                    <p class="text-sm text-gray-600" data-fr="Entretien régulier selon les recommandations du fabricant" data-en="Regular maintenance according to manufacturer recommendations">Entretien régulier selon les recommandations du fabricant</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #F4F5F7;">
+                        <i data-lucide="shield-check" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: #1B2A4A;" data-fr="Inspections Quotidiennes" data-en="Daily Inspections">Inspections Quotidiennes</h3>
+                    <p class="text-sm text-gray-600" data-fr="Vérifications de sécurité avant chaque départ" data-en="Safety checks before each departure">Vérifications de sécurité avant chaque départ</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #F4F5F7;">
+                        <i data-lucide="clipboard-check" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: #1B2A4A;" data-fr="Certifications" data-en="Certifications">Certifications</h3>
+                    <p class="text-sm text-gray-600" data-fr="Conformité à toutes les normes de transport" data-en="Compliance with all transportation standards">Conformité à toutes les normes de transport</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full" style="background-color: #F4F5F7;">
+                        <i data-lucide="activity" class="w-8 h-8" style="color: #1B2A4A;"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" style="color: #1B2A4A;" data-fr="Télémétrie" data-en="Telematics">Télémétrie</h3>
+                    <p class="text-sm text-gray-600" data-fr="Surveillance en temps réel des performances" data-en="Real-time performance monitoring">Surveillance en temps réel des performances</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20" style="background: linear-gradient(135deg, #1B2A4A 0%, #2D3A5A 100%);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-fr="Découvrez Notre Équipement" data-en="Discover Our Equipment">Découvrez Notre Équipement</h2>
+                <p class="text-xl text-gray-200 mb-8" data-fr="Visitez nos installations pour voir de près notre flotte moderne et nos équipements spécialisés" data-en="Visit our facilities to see up close our modern fleet and specialized equipment">Visitez nos installations pour voir de près notre flotte moderne et nos équipements spécialisés</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="px-8 py-4 text-lg font-semibold text-white rounded-lg hover:opacity-90 transition" style="background-color: #C62828;" data-fr="Planifier une Visite" data-en="Schedule a Visit">Planifier une Visite</a>
+                    <a href="tel:450-454-7777" class="px-8 py-4 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-gray-900 transition">450-454-7777</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16" style="background-color: #1B2A4A;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="logo.png" alt="MQT Logo" class="h-10 w-auto filter brightness-0 invert">
+                        <span class="ml-2 text-lg font-bold text-white">Max Quality Transport</span>
+                    </div>
+                    <p class="text-gray-300 mb-4" data-fr="Transport de confiance dans la région de Montérégie depuis 2017." data-en="Trusted transportation in the Montérégie region since 2017.">Transport de confiance dans la région de Montérégie depuis 2017.</p>
+                    <p class="text-sm text-gray-400">BN: 793596719</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Services" data-en="Services">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Général" data-en="General Freight">Transport Général</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Réfrigéré" data-en="Refrigerated">Transport Réfrigéré</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Transport Plateau" data-en="Flatbed">Transport Plateau</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white" data-fr="Charges Lourdes" data-en="Heavy Haul">Charges Lourdes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Entreprise" data-en="Company">Entreprise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-white" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="flotte.html" class="text-gray-300 hover:text-white" data-fr="Notre Flotte" data-en="Our Fleet">Notre Flotte</a></li>
+                        <li><a href="carrieres.html" class="text-gray-300 hover:text-white" data-fr="Carrières" data-en="Careers">Carrières</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4" data-fr="Contact" data-en="Contact">Contact</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p>1013 Rue Principale<br>Saint-Michel-de-Napierville, QC<br>J0L 2J0</p>
+                        <p><a href="tel:450-454-7777" class="hover:text-white">450-454-7777</a></p>
+                        <p><a href="mailto:info@maxqualitytransport.ca" class="hover:text-white">info@maxqualitytransport.ca</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400" data-fr="© 2026 Les Transports Max Quality inc. Tous droits réservés." data-en="© 2026 Max Quality Transport inc. All rights reserved.">© 2026 Les Transports Max Quality inc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const currentLang = localStorage.getItem('language') || 'fr';
+        
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-fr], [data-en]').forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else if (element.content !== undefined) {
+                        element.content = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            langToggle.textContent = lang === 'fr' ? 'FR / EN' : 'EN / FR';
+        }
+        
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('language', newLang);
+            applyLanguage(newLang);
+            location.reload();
+        });
+        
+        applyLanguage(currentLang);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // GSAP ScrollTrigger animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Reveal animations
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>
