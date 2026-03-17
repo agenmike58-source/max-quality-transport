@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://lestransportsmaxquality.com/sitemap.xml
+Sitemap: https://transportmaxquality.ca/sitemap.xml
 
 # Block common bot paths
 Disallow: /cgi-bin/
